@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thoughts on Paper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="main-title">Thoughts on Paper</h1>
+    <div class="tools">
+        <div class="undo-btn btn" id="undo-btn"> 
+            <img src="src/rotate-left-solid.svg">
+        </div>
+        <input class="search-box" type="text" placeholder="search" id="search-box">
+    </div>
+    <div class="note-container" id="note-container"></div>
+
+
+    <!-- templates -->
+    <template id="create-note-template">
+        <div class="new-note-btn" id="new-note-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256zM256 368C269.3 368 280 357.3 280 344V280H344C357.3 280 368 269.3 368 256C368 242.7 357.3 232 344 232H280V168C280 154.7 269.3 144 256 144C242.7 144 232 154.7 232 168V232H168C154.7 232 144 242.7 144 256C144 269.3 154.7 280 168 280H232V344C232 357.3 242.7 368 256 368z"/></svg>
+        </div>
+    </template>
+    <template id="note-template">
+        <div class="note" draggable="true">
+            <div class="note-top">
+                <h2 class="note-title"></h2>
+                <button id="delete-note" class="delete-note">
+                    <img src="src/trash-solid.svg">
+                </button>
+            </div>
+            <div class="text-container">
+                <p class="note-text"></p>
+            </div>
+            <hr>
+            <p class="note-last-edit"></p>
+        </div>
+    </template> 
+
+    <template id="modal-template">
+        <div class="modal-container" id="modal-container">
+            <div class="modal-box animated-modal">
+                <div class="wrapper">
+                    <button id="back-btn" class="back-btn">
+                        <img src="src/arrow-left-solid.svg">
+                    </button>
+                    <p id="box-creation-date" class="box-creation-date"></p>
+                </div>
+                <input type="text" id="box-title-input" placeholder="Title..." autocomplete="off" autocapitalize>
+                <textarea  id="box-text-input" placeholder="Your note goes here..." oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+                <p class="box-last-edit" id="box-last-edit"></p>
+            </div>
+        </div>
+    </template>
+
+    <!-- scripts -->
+    <script src="script.js" type="module"></script>
+</body>
+</html>
+
