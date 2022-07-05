@@ -21,6 +21,11 @@
     margin-left: 1em; 
 }
 
+.undo-btn img {
+    width: 2em;
+    height: 2em;
+}
+
 .btn {
     overflow: hidden;
     background-color: #eee;
