@@ -184,9 +184,9 @@ function formatDate(date) {
     const DD = ('00' + date.getDate()).slice(-2);
     const MM = ('00' + (date.getMonth()+1)).slice(-2);
     const YYYY = date.getFullYear();
-    const hh = date.getHours();
-    const mm = date.getMinutes();
-    const ss = date.getSeconds();
+    const hh = date.getHours().toString().padStart(2, '0');
+    const mm = date.getMinutes().toString().padStart(2, '0');
+    const ss = date.getSeconds().toString().padStart(2, '0');
 
     return `${MM}/${DD}/${YYYY} ${hh}:${mm}:${ss}`;
 }
